@@ -8,19 +8,17 @@ package ac.id.itb.sq;
 
 /**
  *
- * @author wirasta1330
+ * @author edbert
  */
-public class Orang {
-    public String name;
+public class Node<E> {
     
-    public Orang() { }
+    public E element;
+    public Node<E> next;
     
-    public Orang(String name) {
-        this.name = name;
+    public Node() { }
+    
+    public Node(E element) {
+        this.element = element;
     }
     
-    @Override
-    public String toString() {
-        return "Nama: " + name;
-    }
 }

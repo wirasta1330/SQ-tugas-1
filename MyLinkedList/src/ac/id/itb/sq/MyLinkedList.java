@@ -6,8 +6,6 @@
 
 package ac.id.itb.sq;
 
-import java.util.LinkedList;
-
 /**
  *
  * @author wirasta1330
@@ -25,14 +23,17 @@ public class MyLinkedList<E> {
         
         if (head == null) {
             head = p;
+            System.out.println("Head terisi");
         } else {
             Node q = head;
             while (q.next != null) {
                 q = q.next;
             }
             q.next = p;
+            System.out.println("Elemen ke " + size + " terisi");
         }
         size++;
+        System.out.println("Jumlah elemen " + size);
     }
     
     public void remove(int index) {
@@ -66,8 +67,4 @@ public class MyLinkedList<E> {
         // tugas : pak ade (maaf ditambah satu lagi, biar sama efortY dengan yang lain)
     }
     
-    private static class Node<E> {
-        E element;
-        Node<E> next;
-    }
 }
