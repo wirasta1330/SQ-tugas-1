@@ -42,11 +42,30 @@ public class MyLinkedList<E> {
         // tugas : asri
     }
     
+    /**
+     * Method untuk menghitung jumlah elemen didalam List
+     * 
+     * @return jumlah elemen list
+     */
     public int size() {
         // belum diimplementasikan, 
         // buat test kelas
-        // tugas : pak ade
-        return 0;
+        // tugas : pak ade        
+        if (head == null) {
+            return 0;
+        }
+        else {
+            int jumlah = 0;
+            Node node = head;
+            do {
+                jumlah++;
+                node = node.next;
+            }
+            while(node != null);
+            
+            return jumlah;
+        }
+       
     }
     
     public E get(int index) {

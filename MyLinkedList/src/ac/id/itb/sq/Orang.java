@@ -10,7 +10,7 @@ package ac.id.itb.sq;
  *
  * @author wirasta1330
  */
-public class Orang {
+public class Orang { 
     public String name;
     
     public Orang() { }

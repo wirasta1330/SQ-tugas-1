@@ -69,4 +69,23 @@ public class MyLinkedListTest {
         assertEquals("Elemen ke 1 terisi", temp[2]);
         assertEquals("Jumlah elemen 2", temp[3]);
     }
+    
+    @Test
+    public void sizeTest() {
+        MyLinkedList<Orang> myll = new MyLinkedList<>();
+        assertEquals(0, myll.size());
+        
+        // test dengan 2 node baru
+        myll.add(new Orang("Asep"));
+        myll.add(new Orang("Yudi"));
+        assertEquals(2, myll.size());
+        
+        // test ditambah lgi 2 node baru
+        myll.add(new Orang("Jajang"));
+        myll.add(new Orang("Maman"));
+        assertEquals(4, myll.size());
+        
+        
+        // tes dengan remove ??
+    }
 }
