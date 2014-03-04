@@ -47,10 +47,7 @@ public class MyLinkedList<E> {
      * 
      * @return jumlah elemen list
      */
-    public int size() {
-        // belum diimplementasikan, 
-        // buat test kelas
-        // tugas : pak ade        
+    public int size() {       
         if (head == null) {
             return 0;
         }
@@ -81,9 +78,6 @@ public class MyLinkedList<E> {
             System.out.println(q.element);
             q = q.next;
         }
-        
-        // buat test kelas
-        // tugas : pak ade (maaf ditambah satu lagi, biar sama efortY dengan yang lain)
     }
     
 }

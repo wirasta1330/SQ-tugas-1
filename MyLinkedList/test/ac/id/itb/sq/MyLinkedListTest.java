@@ -75,17 +75,44 @@ public class MyLinkedListTest {
         MyLinkedList<Orang> myll = new MyLinkedList<>();
         assertEquals(0, myll.size());
         
-        // test dengan 2 node baru
+        // test dengan 2 elemen baru
         myll.add(new Orang("Asep"));
         myll.add(new Orang("Yudi"));
         assertEquals(2, myll.size());
         
-        // test ditambah lgi 2 node baru
+        // test ditambah lagi 2 elemen baru
         myll.add(new Orang("Jajang"));
         myll.add(new Orang("Maman"));
         assertEquals(4, myll.size());
+                
+        // tes remove satu elemen
+        myll.remove(4);
+        assertEquals(3, myll.size());
         
+        // tes remove semua elemen
+        myll.remove(1);
+        myll.remove(1);
+        myll.remove(1);
+         assertEquals(0, myll.size());
+    }
+    
+    @Test
+    public void printTest() {
+        MyLinkedList<Orang> myll = new MyLinkedList<>();
         
-        // tes dengan remove ??
+        // add 2 elemen
+        myll.add(new Orang("Asep"));
+        myll.add(new Orang("Yudi"));
+        myll.print();
+        String[] temp = outContent.toString().split(System.getProperty("line.separator"));
+        assertEquals("Head terisi", temp[0]);
+        assertEquals("Jumlah elemen 1", temp[1]);
+        
+        // remove
+         
+        // add
+        
+        // remove
+        
     }
 }
