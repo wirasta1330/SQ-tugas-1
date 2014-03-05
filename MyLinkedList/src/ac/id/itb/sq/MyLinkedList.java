@@ -12,28 +12,28 @@ package ac.id.itb.sq;
  */
 public class MyLinkedList<E> {
     
-    private Node head;
+    private Node<E> head;
     private int size;
     
     public MyLinkedList() { }
     
     public void add(E element) {
-        Node p = new Node();
+        Node<E> p = new Node();
         p.element = element;
         
         if (head == null) {
             head = p;
             System.out.println("Head terisi");
         } else {
-            Node q = head;
+            Node<E> q = head;
             while (q.next != null) {
                 q = q.next;
             }
             q.next = p;
-            System.out.println("Elemen ke " + size + " terisi");
+            System.out.println("Elemen ke " + size() + " terisi");
         }
-        size++;
-        System.out.println("Jumlah elemen " + size);
+        //size++;
+        System.out.println("Jumlah elemen " + size());
     }
     
     public void remove(int index) {
