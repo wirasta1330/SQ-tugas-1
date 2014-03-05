@@ -30,7 +30,7 @@ public class MyLinkedList<E> {
                 q = q.next;
             }
             q.next = p;
-            System.out.println("Elemen ke " + size() + " terisi");
+            System.out.println("Elemen ke " + (size() - 1) + " terisi");
         }
         //size++;
         System.out.println("Jumlah elemen " + size());
