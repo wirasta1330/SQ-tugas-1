@@ -71,6 +71,68 @@ public class MyLinkedListTest {
     }
     
     @Test
+    public void removeFirstElemen(){
+        MyLinkedList<Orang> ll = new MyLinkedList<>();
+        ll.add(new Orang("Aston"));
+        ll.add(new Orang("Aa Eca"));
+        ll.add(new Orang("Aceng"));
+        ll.remove(0);
+        assertEquals(2, ll.size()); // cek jumlah elemen
+        assertEquals("Aa Eca", ll.get(0).name); // cek elemen pertama
+        assertEquals("Aceng", ll.get(1).name); // cek elemen kedua
+    }
+    
+    @Test
+    public void removeMiddleElemen(){
+        MyLinkedList<Orang> ll = new MyLinkedList<>();
+        ll.add(new Orang("Aston"));
+        ll.add(new Orang("Aa Eca"));
+        ll.add(new Orang("Aceng"));
+        ll.remove(1);
+        assertEquals(2, ll.size()); // cek jumlah elemen
+        assertEquals("Aston", ll.get(0).name); // cek elemen pertama
+        assertEquals("Aceng", ll.get(1).name); // cek elemen kedua
+    }
+    
+    @Test
+    public void removeLastElemen(){
+        MyLinkedList<Orang> ll = new MyLinkedList<>();
+        ll.add(new Orang("Aston"));
+        ll.add(new Orang("Aa Eca"));
+        ll.add(new Orang("Aceng"));
+        ll.remove(2);
+        assertEquals(2, ll.size()); // cek jumlah elemen
+        assertEquals("Aston", ll.get(0).name); // cek elemen pertama
+        assertEquals("Aa Eca", ll.get(1).name); // cek elemen kedua
+    }
+    
+    @Test
+    public void removeindexOutOfBoundElemenPositif(){
+        MyLinkedList<Orang> ll = new MyLinkedList<>();
+        ll.add(new Orang("Aston"));
+        ll.add(new Orang("Aa Eca"));
+        ll.add(new Orang("Aceng"));
+        ll.remove(3);
+        assertEquals(3, ll.size()); // cek jumlah elemen
+        assertEquals("Aston", ll.get(0).name); // cek elemen pertama
+        assertEquals("Aa Eca", ll.get(1).name); // cek elemen kedua
+        assertEquals("Aceng", ll.get(2).name); // cek elemen ketiga
+    }
+    
+    @Test
+    public void removeindexOutOfBoundElemenNegatif(){
+        MyLinkedList<Orang> ll = new MyLinkedList<>();
+        ll.add(new Orang("Aston"));
+        ll.add(new Orang("Aa Eca"));
+        ll.add(new Orang("Aceng"));
+        ll.remove(-1);
+        assertEquals(3, ll.size()); // cek jumlah elemen
+        assertEquals("Aston", ll.get(0).name); // cek elemen pertama
+        assertEquals("Aa Eca", ll.get(1).name); // cek elemen kedua
+        assertEquals("Aceng", ll.get(2).name); // cek elemen ketiga
+    }
+    
+    @Test
     public void sizeTest() {
         MyLinkedList<Orang> myll = new MyLinkedList<>();
         assertEquals(0, myll.size());
@@ -86,14 +148,14 @@ public class MyLinkedListTest {
         assertEquals(4, myll.size());
                 
         // tes remove satu elemen
-        myll.remove(4);
+        myll.remove(3);
         assertEquals(3, myll.size());
         
         // tes remove semua elemen
-        myll.remove(1);
-        myll.remove(1);
-        myll.remove(1);
-         assertEquals(0, myll.size());
+        myll.remove(0);
+        myll.remove(0);
+        myll.remove(0);
+       assertEquals(0, myll.size());
     }
     
     @Test

@@ -8,15 +8,19 @@ package ac.id.itb.sq;
 
 /**
  *
- * @author wirasta1330
+ * @author edbert, asri wendi, ade
  */
 public class MyLinkedList<E> {
     
     private Node<E> head;
-    private int size;
+    //private int size; tidak pernah dipake
     
     public MyLinkedList() { }
     
+    /**
+     * autor : Edbert
+     * @param element 
+     */
     public void add(E element) {
         Node<E> p = new Node();
         p.element = element;
@@ -36,15 +40,38 @@ public class MyLinkedList<E> {
         System.out.println("Jumlah elemen " + size());
     }
     
+    /**
+     * autor : asri
+     * Method untuk menghapus elemen dari list berdasarkan nilai index
+     * Prekondistion : List tidak kosong
+     * Cek index ada dalam list : jika ada maka hapus, 
+     * jika tidak ada maka penghapusan tidak dilakukan
+     * @param index 
+     */
     public void remove(int index) {
-        // belum diimplementasikan, 
-        // buat test kelas
-        // tugas : asri
+        // cek index ada dalam list
+        if (index < size() && index >= 0){
+            // hapus jika ada
+            Node<E> cursor = head;
+            if (index == 0) {
+                head = cursor.next;
+                cursor.next = null;
+            }else { // index > 0
+                int count = 0;
+                while (count != index-1) { // cari posisi index ke index-1 (node sebelumnya)
+                    cursor = cursor.next;
+                    count = count + 1;
+                }
+                Node<E> tempCursor = cursor.next;
+                cursor.next = tempCursor.next;
+                tempCursor.next = null;
+            }            
+        }
     }
     
     /**
+     * autor : Ade
      * Method untuk menghitung jumlah elemen didalam List
-     * 
      * @return jumlah elemen list
      */
     public int size() {       
@@ -64,7 +91,11 @@ public class MyLinkedList<E> {
         }
        
     }
-    
+    /**
+     * autor : wendi
+     * @param index
+     * @return Elemen
+     */
     public E get(int index) {
         if (head == null) {
             return null;
