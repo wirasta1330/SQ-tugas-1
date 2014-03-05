@@ -121,11 +121,14 @@ public class MyLinkedListTest {
         MyLinkedList<Orang> myll = new MyLinkedList<>();
         Orang o1 = new Orang("Cecep");
         myll.add(o1);
-        Orang o2 = new Orang("Kasep");
+        Orang o2 = new Orang("Acep");
         myll.add(o2);
+        Orang o3 = new Orang("Encep");
+        myll.add(o3);
         
         assertEquals(o1,myll.get(0));
         assertEquals(o2,myll.get(1));        
+        assertEquals(o3,myll.get(2));        
     }
     
 }

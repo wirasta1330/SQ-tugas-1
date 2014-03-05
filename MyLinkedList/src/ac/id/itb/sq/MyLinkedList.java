@@ -66,14 +66,24 @@ public class MyLinkedList<E> {
     }
     
     public E get(int index) {
-        int i = 0;
-        Node<E> p = head;
-        while(i <= index)
-        {
-            p = p.next;
-            i++;            
+        if (head == null) {
+            return null;
+        } else {
+            if (index < 0 || index >= size()) {
+                return null;
+            } else {
+                if (index == 0) return head.element;
+                
+                Node<E> p = head;
+                int i = 0;
+                //boolean found = false;
+                while (i < index) {
+                    p = p.next;
+                    i++;
+                }
+                return p.element;
+            }
         }
-        return p.element;
     }
     
     public void print() {
