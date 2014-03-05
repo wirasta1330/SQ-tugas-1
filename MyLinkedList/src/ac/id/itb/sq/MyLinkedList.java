@@ -66,10 +66,14 @@ public class MyLinkedList<E> {
     }
     
     public E get(int index) {
-        // belum diimplementasikan, 
-        // buat test kelas
-        // tugas : mas wendi
-        return null;
+        int i = 0;
+        Node<E> p = head;
+        while(i <= index)
+        {
+            p = p.next;
+            i++;            
+        }
+        return p.element;
     }
     
     public void print() {
