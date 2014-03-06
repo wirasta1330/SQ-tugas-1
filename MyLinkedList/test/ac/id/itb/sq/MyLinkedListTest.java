@@ -156,6 +156,12 @@ public class MyLinkedListTest {
         myll.remove(0);
         myll.remove(0);
        assertEquals(0, myll.size());
+       
+       // tes remove ketika 0 elemen
+       myll.remove(-1);
+       assertEquals(0, myll.size());
+       myll.remove(0);
+       assertEquals(0, myll.size());
     }
     
     @Test
@@ -169,13 +175,16 @@ public class MyLinkedListTest {
         String[] temp = outContent.toString().split(System.getProperty("line.separator"));
         assertEquals("Head terisi", temp[0]);
         assertEquals("Jumlah elemen 1", temp[1]);
+        assertEquals("Elemen ke 1 terisi", temp[2]);
+        assertEquals("Jumlah elemen 2", temp[3]);
+        assertEquals("Nama: Asep", temp[4]);
+        assertEquals("Nama: Yudi", temp[5]);
         
-        // remove
-         
-        // add
-        
-        // remove
-        
+        // remove 1 elemen
+        myll.remove(myll.size());
+        myll.print();
+        temp = outContent.toString().split(System.getProperty("line.separator"));
+        assertEquals("Nama: Asep", temp[6]);        
     }
     
     @Test

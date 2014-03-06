@@ -16,11 +16,15 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MyLinkedList<Orang> ll = new MyLinkedList<>();
-        ll.add(new Orang("Aston"));
-        ll.add(new Orang("Aa Eca"));
-        ll.add(new Orang("Aceng"));
-        ll.print();
+         MyLinkedList<Orang> myll = new MyLinkedList<>();
+        
+        // add 2 elemen
+        myll.add(new Orang("Asep"));
+        myll.add(new Orang("Yudi"));
+        myll.print();
+        
+        myll.remove(myll.size()-1);
+        myll.print();
     }
     
 }
